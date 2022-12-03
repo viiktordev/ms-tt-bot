@@ -1,6 +1,8 @@
 // import { TweetBookmarksTimelineV2Paginator, TwitterApi } from 'twitter-api-v2';
 import dotenv from 'dotenv';
 import needle from 'needle';
+import { pipeline } from 'node:stream/promises';
+import { Transform } from 'node:stream';
 
 (async ()=>{
   dotenv.config()
@@ -16,12 +18,16 @@ import needle from 'needle';
     timeout: 2000
 });
 
-stream.on('data', data => {
-  if(data.length != 2) {
-    const parsed = JSON.parse(data.toString('utf-8'));
-    console.log(parsed);
-    
+const transform = new Transform({
+  transform(chunk, enc, callback) {
+    const jsonData = chunk.toString();
+    console.log(jsonData);
+    return callback(null, jsonData)
   }
-}).on('err', error => {
-    })
+})
+
+await pipeline(
+  stream,
+  transform
+)
 })()
