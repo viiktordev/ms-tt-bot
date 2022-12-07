@@ -662,6 +662,11 @@ twitter-api-v2@^1.12.8:
   resolved "https://registry.yarnpkg.com/twitter-api-v2/-/twitter-api-v2-1.12.9.tgz#447fc4efb693bbb7983a6dcec2de5da7e0f27648"
   integrity sha512-nmKwcUiXgoEfcOtAH/hYojy0oSxbouWvvNsHVphiHSW9x9aus2Jdg9/NRB2Gzyq5G6xl+EkjUlEWwBQjp1FOfg==
 
+typescript@^4.9.3:
+  version "4.9.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.3.tgz#3aea307c1746b8c384435d8ac36b8a2e580d85db"
+  integrity sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==
+
 url@0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/url/-/url-0.10.3.tgz#021e4d9c7705f21bbf37d03ceb58767402774c64"
