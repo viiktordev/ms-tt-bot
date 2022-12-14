@@ -1,17 +1,17 @@
 
 interface Tweet {
-  id: string,
-  referenced: string,
-  author: string,
+  tweetId: string,
+  referencedTweetId: string,
+  authorId: string,
   imgUrl: string,
 }
 
 const parseTweet = (tweet: any): Tweet => {
   return {
-    id: tweet.id,
-    referenced: tweet.referenced_tweets[0]?.id,
-    author: tweet.author_id,
-    imgUrl: tweet.url
+    tweetId: tweet.id,
+    referencedTweetId: tweet.referenced_tweets[0]?.id,
+    authorId: tweet.author_id,
+    imgUrl: tweet.url,
   }
 }
 
