@@ -26,13 +26,13 @@ import { parseTweet } from './src/utils';
       const jsonData = chunk.toString();
 
       if(chunk.length > 2) {
-        const { data } = JSON.parse(jsonData)
+        const { data } = JSON.parse(jsonData);
 
-        const tweetId = data?.referenced_tweets[0]?.id
+        const tweetId = data?.referenced_tweets[0]?.id;
 
         const url = await getMediaDetails(tweetId);
 
-        const parsedTweet = parseTweet({...data, url})
+        const parsedTweet = parseTweet({...data, url});
 
         return callback(null, JSON.stringify(parsedTweet));
       }
